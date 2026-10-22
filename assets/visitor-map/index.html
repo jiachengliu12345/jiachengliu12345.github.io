@@ -1,0 +1,11 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1"> <meta name="robots" content="noindex"> <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' https://mapmyvisitors.com https://code.jquery.com; style-src 'unsafe-inline'; img-src data: https://mapmyvisitors.com https://dev.mapmyvisitors.com; connect-src https://mapmyvisitors.com; base-uri 'none'; form-action 'none';"> <title>Visitor locations</title> <style>html,body{margin:0;padding:0}</style> </head> <body> <script id="mapmyvisitors" src="https://mapmyvisitors.com/map.js?d=Wj5JU16joVBGf-IpG9W-9wQb-dWGdjX9Au2dhXCKv9c&amp;cl=ffffff&amp;w=a"></script> <script>
+      // Open the statistics page outside the sandbox instead of navigating the homepage.
+      document.addEventListener("click", function (event) {
+        var link = event.target.closest("a");
+        if (link) {
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          link.href = link.href.replace(/^http:/, "https:");
+        }
+      });
+    </script> </body> </html>
