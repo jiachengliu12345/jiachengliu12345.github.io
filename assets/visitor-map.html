@@ -1,0 +1,44 @@
+---
+layout: null
+sitemap: false
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' https://mapmyvisitors.com https://code.jquery.com; style-src 'unsafe-inline'; img-src data: https://mapmyvisitors.com https://dev.mapmyvisitors.com; connect-src https://mapmyvisitors.com; base-uri 'none'; form-action 'none';"
+    />
+    <title>Visitor locations</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    {% if site.visitor_map.enabled and site.visitor_map.provider == 'mapmyvisitors' and site.visitor_map.mapmyvisitors_id %}
+    <script
+      id="mapmyvisitors"
+      src="https://mapmyvisitors.com/map.js?d={{ site.visitor_map.mapmyvisitors_id | uri_escape }}&cl={{ site.visitor_map.color | default: 'ffffff' | uri_escape }}&w={{ site.visitor_map.width | default: 'a' | uri_escape }}"
+    ></script>
+    <script>
+      // Open the statistics page outside the sandbox instead of navigating the homepage.
+      document.addEventListener("click", function (event) {
+        var link = event.target.closest("a");
+        if (link) {
+          link.target = "_blank";
+          link.rel = "noopener noreferrer";
+          link.href = link.href.replace(/^http:/, "https:");
+        }
+      });
+    </script>
+    {% endif %}
+  </body>
+</html>

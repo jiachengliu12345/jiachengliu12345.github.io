@@ -17,13 +17,23 @@
         src="https://mapmyvisitors.com/globe.js?d={{ visitor_map.mapmyvisitors_id }}"
       ></script>
     {% elsif visitor_map_provider == 'mapmyvisitors' and visitor_map_widget == 'map' and visitor_map.mapmyvisitors_id %}
-      <script
-        {% if site.enable_cookie_consent %}
-          type="text/plain" data-category="analytics"
-        {% endif %}
-        id="mapmyvisitors"
-        src="https://mapmyvisitors.com/map.js?d={{ visitor_map.mapmyvisitors_id }}&cl={{ visitor_map.color | default: 'ffffff' }}&w={{ visitor_map.width | default: 'a' }}"
-      ></script>
+      {% comment %}MapMyVisitors requires eval; keep that permission inside a sandboxed document.{% endcomment %}
+      <div class="visitor-map-embed">
+        <iframe
+          id="visitor-map-frame"
+          class="visitor-map-frame"
+          title="Visitor locations"
+          sandbox="allow-scripts allow-popups allow-popups-to-escape-sandbox"
+          {% unless site.enable_cookie_consent %}
+            src="{{ '/assets/visitor-map.html' | relative_url }}"
+          {% endunless %}
+        ></iframe>
+      </div>
+      {% if site.enable_cookie_consent %}
+        <script type="text/plain" data-category="analytics">
+          document.getElementById('visitor-map-frame').src = {{ '/assets/visitor-map.html' | relative_url | jsonify }};
+        </script>
+      {% endif %}
     {% elsif visitor_map_provider == 'clustrmaps' and visitor_map.clustrmaps_id %}
       <script
         {% if site.enable_cookie_consent %}
