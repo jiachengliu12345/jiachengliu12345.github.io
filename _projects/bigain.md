@@ -4,7 +4,7 @@ title: BiGain
 description: Unified token compression for joint generation and classification.
 importance: 3
 category: research
-github: https://github.com/Greenoso/BiGain
+github: https://github.com/jiachengliu12345/bigain
 paper: https://arxiv.org/abs/2603.12240
 ---
 

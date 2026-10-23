@@ -6,7 +6,7 @@ importance: 1
 category: research
 github: https://github.com/MetaAgentX/NextGen-CAPTCHAs
 paper: https://arxiv.org/abs/2602.09012
-website: https://greenoso.github.io/NextGen-CAPTCHAs_webpage/
+website: https://jiachengliu12345.github.io/NextGen-CAPTCHAs_webpage/
 ---
 
 {% include project_links.liquid project=page %}
