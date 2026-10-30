@@ -30,26 +30,9 @@ docker compose up --build
 docker compose down
 ```
 
-### Pre-Commit Checklist
+### Checks before a commit
 
-Before every commit, you **must** run these steps:
-
-1.  **Format Code:**
-    ```bash
-    # (First time only)
-    npm install --save-dev prettier @shopify/prettier-plugin-liquid
-    # Format all files
-    npx prettier . --write
-    ```
-2.  **Build Locally & Verify:**
-
-    ```bash
-    # Rebuild the site
-    docker compose up --build
-
-    # Verify by visiting http://localhost:8080.
-    # Check navigation, pages, images, and dark mode.
-    ```
+Review the diff and check the content, links, syntax, and formatting relevant to the change. Use targeted checks for small content edits. Run a local site build and check the affected pages when the change warrants it and the required environment is available; a local Docker build is not required for every commit. For a published change, check the deployment result and the live page when possible.
 
 ## Critical Configuration
 
