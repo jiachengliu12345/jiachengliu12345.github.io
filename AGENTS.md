@@ -34,6 +34,8 @@ docker compose down
 
 Review the diff and check the content, links, syntax, and formatting relevant to the change. Use targeted checks for small content edits. Run a local site build and check the affected pages when the change warrants it and the required environment is available; a local Docker build is not required for every commit. For a published change, check the deployment result and the live page when possible.
 
+For publications, keep the homepage limited to entries marked `selected = {true}`. Set `author_priority = {1}` for Jiacheng's first-author and verified equal-first-author papers, and `author_priority = {0}` for other papers. Set the publication year and, when verified, month; the site sorts first by author priority, then by year and month, newest first. Keep contributor and equal-contribution labels faithful to the paper.
+
 ## Critical Configuration
 
 When modifying `_config.yml`, these **must be updated together**:
