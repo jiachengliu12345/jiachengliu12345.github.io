@@ -25,4 +25,4 @@ My research focuses on efficient language and generative models, and self-improv
 
 Previously MSc at [UCL](https://www.ucl.ac.uk/), advised by [Prof. Jun Wang](http://www0.cs.ucl.ac.uk/staff/Jun.Wang/); part-time research intern at Huawei Noah's Ark Lab, London (2023–2024) with [Dr. Kun Shao](https://scholar.google.com/citations?user=Y7s8VTAAAAAJ).
 
-Currently, I am a research intern with Ant Group's LLaDA-Uni team, working on generative model training under the mentorship of [Prof. Tao Lin](https://scholar.google.com/citations?user=QE9pa_cAAAAJ&hl=en).
+Currently, I am a research intern with Ant Group's LLaDA-Uni team, working on generative model training under the mentorship of [Jianguo Li](https://sites.google.com/site/leeplus/) and [Haoxing Chen](https://scholar.google.com/citations?user=BnS7HzAAAAAJ&hl=zh-CN).
